@@ -1,0 +1,34 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Domains\{{ domain }}\Models\{{ model }};
+use Illuminate\Database\Eloquent\Collection;
+
+class {{ class }}
+{
+    public function getAll(): Collection
+    {
+        return {{ model }}::all();
+    }
+
+    public function getById($id): {{ model }}
+    {
+        return {{ model }}::findOrFail($id);
+    }
+
+    public function delete($id): int
+    {
+        return {{ model }}::destroy($id);
+    }
+
+    public function create(array $attributes): {{ model }}
+    {
+        return {{ model }}::create($attributes);
+    }
+
+    public function update($id, array $attributes): bool
+    {
+        return {{ model }}::whereId($id)->update($attributes);
+    }
+}
