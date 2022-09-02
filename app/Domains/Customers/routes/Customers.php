@@ -1,9 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Domains\Customers\Http\Controllers\CustomerController;
 
-Route::prefix('customers')->group(function () {
-       Route::get('/', function(){
-           return 'test';
-       });
-});
+Route::apiResource('customers',CustomerController::class);
